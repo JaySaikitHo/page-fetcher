@@ -5,8 +5,8 @@ const size = fs.statSync(`${userInput[1]}`)
 
 
 request(`${userInput[0]}`, (error, response, body) => {
-  fs.writeFile(`${userInput[1]}`, body, (err) => {
-    if (err) throw err;
+  fs.writeFile(`${userInput[1]}`, body, (error) => {
+    if (error) throw err;
     console.log(`downloaded and saved ${size.size} bits to ${userInput[1]} `);
   });
 });
